@@ -1,0 +1,64 @@
+<h1>prgm1</h1>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copy Text Box</title>
+</head>
+<body>
+
+<textarea id="text-to-copy" rows="4" cols="50">#include<stdlib.h>
+
+    #include<string.h>
+    
+    main()
+    
+    {
+    
+    char str[]="010010";
+    
+    char str1[11];
+    
+    int i,len;
+    
+    len=strlen(str);
+    
+    for(i=0;i<len;i++)
+    
+    {
+    
+    str1[i]=str[i]^0;
+    
+    printf("%c",str1[i]);
+    
+    }
+    
+    printf("\n");
+    
+    }
+</textarea><br>
+
+<button onclick="copyText()">Copy Text</button>
+
+<script>
+function copyText() {
+  /* Get the text field */
+  var copyText = document.getElementById("text-to-copy");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+</script>
+
+</body>
+</html>
